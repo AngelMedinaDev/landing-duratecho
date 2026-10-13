@@ -1,70 +1,27 @@
 ---
-import '../styles/global.css';
-import Analytics from '@vercel/analytics/astro';
-
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
-
-<!doctype html>
-<html lang="es" class="scroll-smooth">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        
-        <!-- SEO y Meta Tags -->
-        <title>{title || "DuraTecho | Expertos en Impermeabilización en Monterrey"}</title>
-        <meta name="description" content="Protege tu patrimonio. Especialistas en impermeabilización, reparación de goteras y mantenimiento de techos. Cotiza sin compromiso." />
-        <meta name="keywords" content="impermeabilizacion, goteras, techos, reparar techo, Monterrey, Nuevo Leon, humedad" />
-        
-        <!-- Schema.org para SEO Local (Negocio de Construccion/Techos) -->
-        <script type="application/ld+json">
-            {
-              "@context": "https://schema.org",
-              "@type": "RoofingContractor",
-              "name": "DuraTecho",
-              "image": "URL_DE_SU_LOGO",
-              "telephone": "+528126177552",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Monterrey",
-                "addressRegion": "N.L.",
-                "addressCountry": "MX"
-              },
-              "url": "https://duratecho.com"
-            }
-        </script>
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <!-- Fuentes más sólidas/industriales -->
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    </head>
-    <body class="m-0 w-full min-h-screen bg-[#F8F9FA] font-sans antialiased text-slate-800">
-        <slot />
-        <Analytics />
-    </body>
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <meta name="keywords" content="impermeabilización en Monterrey, impermeabilizantes acrílicos, Impac, Berel, Crest, reparación de goteras Monterrey, DuraTecho" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph para cuando compartan el link en WhatsApp o Facebook -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_MX" />
+  
+  <title>{title}</title>
+  
+  <!-- Preconnect para cargar fuentes o scripts de Meta más rápido después -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans antialiased">
+  <slot />
+</body>
 </html>
-
-<style is:global>
-    .font-title { font-family: 'Oswald', sans-serif; }
-    .font-body { font-family: 'Roboto', sans-serif; }
-    
-    /* Colores de la marca basados en su IG */
-    :root {
-        --brand-orange: #F58220;
-        --brand-dark: #1F2937;
-    }
-
-    /* Animaciones Premium */
-    .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-    }
-    .reveal.active { 
-        opacity: 1; 
-        transform: translateY(0); 
-    }
-</style>
