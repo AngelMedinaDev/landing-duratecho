@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import logoDuraTecho from '../../public/duratecho.png';
 
 const whatsappNumber = "528126177552";
 const defaultWaMsg = "Hola DuraTecho, vengo de su página web. Me interesa una cotización para mi techo.";
@@ -7,10 +9,10 @@ const defaultWaMsg = "Hola DuraTecho, vengo de su página web. Me interesa una c
 
 <Layout title="DuraTecho | Impermeabilización en Monterrey con Garantía">
     
-    <!-- NAVEGACIÓN CON LOGO OFICIAL -->
+    <!-- NAVEGACIÓN CON LOGO OFICIAL OPTIMIZADO -->
     <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md px-6 py-4 flex justify-between items-center shadow-md border-b-4 border-[#f19201]">
         <div class="flex items-center">
-            <img src="/duratecho.png" alt="Logo DuraTecho" class="h-10 w-auto object-contain" />
+            <Image src={logoDuraTecho} alt="Logo DuraTecho" class="h-10 w-auto object-contain" />
         </div>
         
         <div class="hidden md:flex gap-8 font-title text-[#565656] font-medium text-sm tracking-widest uppercase">
@@ -258,11 +260,11 @@ const defaultWaMsg = "Hola DuraTecho, vengo de su página web. Me interesa una c
             </div>
         </section>
 
-        <!-- FOOTER CON LOGO OFICIAL -->
+        <!-- FOOTER CON LOGO OFICIAL OPTIMIZADO -->
         <footer class="bg-[#111827] py-12 border-t-4 border-[#f19201]">
             <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="text-center md:text-left flex flex-col md:flex-row items-center md:items-start gap-4">
-                    <img src="/duratecho.png" alt="Logo DuraTecho" class="h-12 w-auto grayscale opacity-80" />
+                    <Image src={logoDuraTecho} alt="Logo DuraTecho" class="h-12 w-auto grayscale opacity-80 object-contain" />
                     <div>
                         <p class="text-gray-400 font-body text-sm mt-1">Expertos en impermeabilización en Monterrey.</p>
                         <p class="text-gray-400 font-body text-sm">duratechomx@gmail.com</p>
